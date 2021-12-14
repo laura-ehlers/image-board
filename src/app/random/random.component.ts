@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {ApiService} from "../api/api.service";
 
 
 @Component({
@@ -10,10 +11,11 @@ export class RandomComponent implements OnInit {
 
   items: Array<any> = [];
 
-  constructor() {
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit(): void {
+
     this.items = [
       {
         'creator': 'Boob',
@@ -44,5 +46,9 @@ export class RandomComponent implements OnInit {
         'src': 'assets/pexels-veronika-bykovich-10401243.jpg'
       }
     ]
+  }
+
+  pexels() {
+    this.apiService.getRandomImage();
   }
 }

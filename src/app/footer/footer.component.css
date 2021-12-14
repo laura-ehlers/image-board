@@ -1,9 +1,13 @@
 .footer {
   margin-top: 10px;
-  background: transparent;
+  background: coral;
   height: 70px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  z-index: 100;
+
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .spacerFooter {
@@ -11,7 +15,7 @@
 }
 
 .footerItem {
-  background-color: transparent;
+  background-color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -23,5 +27,5 @@
 }
 
 .footerItem:hover {
-  background-color: coral;
+  /* background-color: coral; */
 }
