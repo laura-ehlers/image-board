@@ -1,0 +1,54 @@
+<div style="height: 100vh;">
+  <mat-toolbar class="nav-bar">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <a (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </a>
+    </div>
+    <div fxShow="true" fxHide.lt-md="true">
+      <button class="nav-item" aria-label="My Design" routerLink="/random"
+              routerLinkActive="activebutton">
+        <app-nav-bar-item [navItemName]="name3"></app-nav-bar-item>
+      </button>
+      <button class="nav-item" aria-label="My Design" routerLink="/my-design"
+              routerLinkActive="activebutton">
+        <app-nav-bar-item [navItemName]="name1"></app-nav-bar-item>
+      </button>
+      <button class="nav-item" aria-label="My Design" routerLink="/categories"
+              routerLinkActive="activebutton">
+        <app-nav-bar-item [navItemName]="name2"></app-nav-bar-item>
+      </button>
+    </div>
+    <span class="spacer"></span>
+
+    <div class="searchBox">
+      <input id="searchInput" type="text" name="" placeholder="Search">
+      <button type="button" class="searchButton" (click)="focusMethod()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill class="sideBar">
+    <!-- creates a navbar on the side when the screen size is smaller than -->
+    <mat-sidenav #sidenav fxLayout="column" mode="side" opened="false">
+      <div fxLayout="column">
+        <button class="nav-item" aria-label="My Design" routerLink="/random"
+                routerLinkActive="activebutton">
+          <app-nav-bar-item [navItemName]="name3"></app-nav-bar-item>
+        </button>
+        <button class="nav-item" aria-label="My Design" routerLink="/my-design"
+                routerLinkActive="activebutton">
+          <app-nav-bar-item [navItemName]="name1"></app-nav-bar-item>
+        </button>
+        <button class="nav-item" aria-label="My Design" routerLink="/categories"
+                routerLinkActive="activebutton">
+          <app-nav-bar-item [navItemName]="name2"></app-nav-bar-item>
+        </button>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

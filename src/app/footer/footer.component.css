@@ -1,0 +1,27 @@
+.footer {
+  margin-top: 10px;
+  background: transparent;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+}
+
+.spacerFooter {
+  flex: 1 1 auto; /*add space between search icon and rest of nav bar items*/
+}
+
+.footerItem {
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.footerItem:hover {
+  background-color: coral;
+}

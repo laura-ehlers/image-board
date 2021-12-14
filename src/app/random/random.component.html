@@ -1,0 +1,15 @@
+<ng-container>
+  <h3>Test</h3>
+  <div class="masonry-with-columns">
+    <mat-card *ngFor="let item of items" class="card">
+      <img mat-card-image [src]="item.src">
+      <mat-card-content>
+        <p>© {{ item.creator }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Add</button>
+        <button mat-button>(Download)</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</ng-container>
