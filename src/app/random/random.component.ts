@@ -16,39 +16,17 @@ export class RandomComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.items = [
-      {
-        'creator': 'Boob',
-        'src': 'assets/pexels-veronika-bykovich-10401243.jpg'
-      },
-      {
-        'creator': 'Boob2',
-        'src': 'assets/pexels-veronika-bykovich-10401243.jpg'
-      },
-      {
-        'creator': 'Boob2',
-        'src': 'assets/pexels-veronika-bykovich-10401243.jpg'
-      },
-      {
-        'creator': 'Boob2',
-        'src': 'assets/pexels-veronika-bykovich-10401243.jpg'
-      },
-      {
-        'creator': 'Boob2',
-        'src': 'assets/pexels-veronika-bykovich-10401243.jpg'
-      },
-      {
-        'creator': 'Boob2',
-        'src': 'assets/pexels-veronika-bykovich-10401243.jpg'
-      },
-      {
-        'creator': 'Boob2',
-        'src': 'assets/pexels-veronika-bykovich-10401243.jpg'
-      }
-    ]
+    this.items = [];
   }
 
   pexels() {
-    this.apiService.getRandomImage();
+    this.apiService.getRandomImage().then(results => {
+      results.hits.forEach((result: any) => {
+        this.items.push({'creator': 'Test', 'src': result.webformatURL});
+      })
+      // this.items;
+      // console.log(result);
+    });
+    // console.log(this.items)
   }
 }

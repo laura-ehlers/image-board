@@ -1,18 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { createClient } from 'pexels';
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {searchImages} from 'pixabay-api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private client = createClient('563492ad6f91700001000001c668dfb9faa4470e9c217d6eb68aa3fe');
-
   constructor(private httpClient: HttpClient) { }
 
-  getRandomImage() {
+  async getRandomImage(): Promise<any> {
     console.log('random image');
+    let images = [];
+
+    return await searchImages('24820906-d5dae2f9641e319a6153a3841', 'baby', {per_page: 20, page: 1});
     // return this.httpClient.get('')
   }
 

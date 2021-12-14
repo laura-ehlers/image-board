@@ -20,10 +20,10 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 10px;
+  margin: 10px 0px;
   border: 2px solid black;
-  border-radius: 25px;
   padding: 10px;
+  border-radius: 25px;
 }
 
 .footerItem:hover {
