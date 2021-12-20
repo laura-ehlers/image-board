@@ -19,6 +19,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
+import { SingleCategoryComponent } from './single-category/single-category.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {HttpClientModule} from "@angular/common/http";
     MyDesignComponent,
     CategoriesComponent,
     RandomComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SingleCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -40,13 +42,7 @@ import {HttpClientModule} from "@angular/common/http";
     MatIconModule,
     FlexLayoutModule,
     MatSidenavModule,
-    RouterModule.forRoot([
-      {path: 'my-design', component: MyDesignComponent},
-      {path: 'categories', component: CategoriesComponent},
-      {path: 'random', component: RandomComponent},
-      {path: '', redirectTo: '/random', pathMatch: 'full'},
-      {path: '**', component: PageNotFoundComponent}
-    ]),
+    RouterModule,
     MatButtonModule,
     MatCardModule,
   ],

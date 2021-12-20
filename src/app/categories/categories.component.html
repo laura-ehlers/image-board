@@ -1,3 +1,8 @@
 <ng-container>
-  <p>categories works!</p>
+  <h1 class="page-title">Categories</h1>
+  <div class="categories-container">
+    <div class="category" *ngFor="let category of categories" [routerLink]="['/categories', category.name]">
+      <h3>{{ category.title }}</h3>
+    </div>
+  </div>
 </ng-container>
