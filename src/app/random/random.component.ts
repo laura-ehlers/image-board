@@ -1,5 +1,8 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ApiService} from "../api/api.service";
+import { Store } from '@ngrx/store';
+import {getItems, getItems2, setItems} from "../store/actions";
+import {selectItems} from "../store/reducer";
 
 
 @Component({
@@ -9,24 +12,35 @@ import {ApiService} from "../api/api.service";
 })
 export class RandomComponent implements OnInit {
 
-  items: Array<any> = [];
+  _items: any[] = [];
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private store: Store) {
   }
 
   ngOnInit(): void {
-
     this.items = [];
   }
 
-  pexels() {
-    this.apiService.getRandomImage().then(results => {
+  async pexels() {
+    this.items = [];
+    document.getElementsByClassName('rotate')[0].classList.toggle('down');
+    let localItems: any = await this.apiService.getRandomImages();
+    this.items = localItems.hits.map((hit: any) => ({'creator': hit.user, 'src': hit.webformatURL}));
+    console.log(this.items);
+    this.store.dispatch(setItems({ items: this.items}));
+    // console.log(localItems);
+      /*.then(results => {
       results.hits.forEach((result: any) => {
-        this.items.push({'creator': 'Test', 'src': result.webformatURL});
+        let item = { 'creator': result.user, 'src': result.webformatURL};
+        this.items.push(item);
       })
-      // this.items;
-      // console.log(result);
-    });
-    // console.log(this.items)
+     }).then(_ => this.store.dispatch(setItems({ items: this.items })))*/;
+  }
+
+  get items(): any {
+    return this._items;
+  }
+  set items(val: any) {
+    this._items = val;
   }
 }

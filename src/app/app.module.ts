@@ -20,6 +20,10 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
 import { SingleCategoryComponent } from './single-category/single-category.component';
+import { StoreModule } from '@ngrx/store';
+import {EffectsModule} from "@ngrx/effects";
+import {ItemReducer} from "./store/reducer";
+import {ItemsEffect} from "./store/effects";
 
 @NgModule({
   declarations: [
@@ -45,6 +49,8 @@ import { SingleCategoryComponent } from './single-category/single-category.compo
     RouterModule,
     MatButtonModule,
     MatCardModule,
+    StoreModule.forRoot({items: ItemReducer}),
+    EffectsModule.forRoot([ItemsEffect]),
   ],
   providers: [],
   bootstrap: [AppComponent]

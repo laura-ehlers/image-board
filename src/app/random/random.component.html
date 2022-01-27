@@ -1,6 +1,5 @@
 <ng-container>
-  <h1 class="page-title">Random</h1>
-  <button (click)="pexels()">Test Pexels</button>
+  <h1 class="page-title">Random<mat-icon class="rotate" (click)="pexels()">autorenew</mat-icon></h1>
   <div class="masonry-with-columns">
     <mat-card *ngFor="let item of items" class="card">
       <img mat-card-image [src]="item.src">

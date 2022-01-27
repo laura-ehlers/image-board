@@ -83,9 +83,12 @@
   margin-left: 30px;
 }
 
+.mat-toolbar {
+  margin-top: 0;
+}
+
 .mat-sidenav-container {
   background-color: transparent;
-  padding-bottom: 75px;
   width: 70% !important;
   min-width: 70% !important;
   text-align: center;
@@ -111,8 +114,10 @@
   display: none;
 }
 
-
-
+.sideBar {
+  min-height: 0 !important;
+  height: 90% !important;
+}
 
 .sidebarOpened {
   display: none;
