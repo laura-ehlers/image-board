@@ -8,17 +8,11 @@ html {
   box-sizing: inherit;
 }
 
-.masonry-with-columns {
-  column-count: 4;
-  column-gap: 3rem;
-  margin: 0 50px;
-}
-
 .masonry-with-columns .card {
-  margin: 0 1rem 1rem 0;
   display: inline-block;
   width: 100%;
   font-size: 2rem;
+  margin: 5px;
 }
 
 .page-title, .page-title mat-icon {
@@ -32,13 +26,13 @@ html {
   cursor: pointer;
 }
 
-.rotate{
+.rotate {
   -moz-transition: all 0.5s linear;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
 
-.rotate.down{
+.rotate.down {
   -ms-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
@@ -50,7 +44,6 @@ html {
   height: 60px;
   border-radius: 40px;
   padding: 0;
-  margin: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,6 +84,7 @@ html {
   color: white;
   font-size: 1rem;
 }
+
 .ib-button {
   cursor: pointer;
 }
@@ -109,23 +103,23 @@ html {
   justify-content: center;
 }
 
-/* Masonry on large screens */
-@media only screen and (min-width: 1024px) {
-  .masonry-with-columns {
-    column-count: 4;
+/*Desktop Viewport*/
+@media only screen and (min-width: 769px) {
+  .masonry-with-columns .card {
+    width: 25%;
   }
 }
 
-/* Masonry on medium-sized screens */
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
-  .masonry-with-columns {
-    column-count: 3;
+/* Tablet viewport*/
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+  .masonry-with-columns .card {
+    width: 40%;
   }
 }
 
-/* Masonry on small screens */
-@media only screen and (max-width: 767px) and (min-width: 540px) {
-  .masonry-with-columns {
-    column-count: 2;
+/* Mobile viewport */
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+  .masonry-with-columns .card {
+    width: 100%;
   }
 }
