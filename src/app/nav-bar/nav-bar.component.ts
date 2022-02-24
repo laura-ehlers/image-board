@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,17 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-  name1 = 'My Design';
   name2 = 'Categories';
-  name3 = 'Random';
+  name3 = 'Search';
 
   constructor() {
-  }
-
-  focusMethod = function getFocus() {
-    // @ts-ignore
-    document.getElementById("searchInput").focus();
-    let x = document.getElementById("searchInput");
-    console.log(x);
   }
 }

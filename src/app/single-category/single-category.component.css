@@ -3,3 +3,29 @@
   margin-bottom: 30px;
   font-size: 2.5rem;
 }
+
+.masonry-with-columns {
+  column-count: 4;
+  column-gap: 3rem;
+  margin: 0 50px;
+}
+
+.masonry-with-columns .card {
+  margin: 0 1rem 1rem 0;
+  display: inline-block;
+  width: 100%;
+  font-size: 2rem;
+}
+
+#add {
+  margin-right: 15px;
+}
+
+mat-card-actions {
+  padding: 0;
+  padding-bottom: 5px !important;
+}
+
+.ib-button {
+  cursor: pointer;
+}

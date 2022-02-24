@@ -1,7 +1,12 @@
 <ng-container>
-  <h1 class="page-title">{{ title }}</h1>
+  <div class="searchBox">
+    <input (keyup.enter)="search()" id="searchInput" type="text" name="" placeholder="Search">
+    <span class="icon-bg">
+      <mat-icon id="searchIcon" (click)="search()">search</mat-icon>
+    </span>
+  </div>
   <div class="masonry-with-columns">
-    <mat-card *ngFor="let item of items$" class="card">
+    <mat-card *ngFor="let item of items" class="card">
       <img mat-card-image [src]="item.src">
       <mat-card-content>
         <p>© {{ item.creator }}</p>

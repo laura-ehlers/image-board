@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MyDesignComponent} from "./my-design/my-design.component";
 import {CategoriesComponent} from "./categories/categories.component";
-import {RandomComponent} from "./random/random.component";
+import {SearchComponent} from "./search/search.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {SingleCategoryComponent} from "./single-category/single-category.component";
 
@@ -10,12 +9,8 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: '/random',
+    redirectTo: '/search',
     pathMatch: 'full'
-  },
-  {
-    path: 'my-design',
-    component: MyDesignComponent
   },
   {
     path: 'categories',
@@ -25,8 +20,8 @@ const routes: Routes = [
     path: 'categories/:categoryName',
     component: SingleCategoryComponent
    },
-  { path: 'random',
-    component: RandomComponent
+  { path: 'search',
+    component: SearchComponent
   },
   {
     path: '**',

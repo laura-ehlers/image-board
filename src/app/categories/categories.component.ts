@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../api/api.service";
-import {select, Store} from '@ngrx/store'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })
-export class CategoriesComponent implements OnInit {
+export class CategoriesComponent {
 
   categories = [
     {
@@ -88,19 +86,7 @@ export class CategoriesComponent implements OnInit {
     },
   ];
 
-  constructor(private store: Store, private apiService: ApiService) {
+  constructor() {
   }
-
-  ngOnInit(): void {
-  }
-
-  /*getSubCategory(category:string) {
-    let that = this;
-    let results: any[] = [];
-
-    this.apiService.getImagesByCategory(category).then(result => {
-      results = result.hits;
-    })
-  }*/
 
 }
