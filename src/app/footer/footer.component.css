@@ -1,31 +1,35 @@
-.footer {
-  margin-top: 10px;
-  background: coral;
-  height: 70px;
-  position: fixed;
-  bottom: 0;
-  z-index: 100;
+@media only screen and (min-width: 1025px) {
+  .footer {
+    margin-top: 10px;
+    background: coral;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
 
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+
+  .spacerFooter {
+    flex: 1 1 auto; /*add space between footer items*/
+  }
+
+  .footerItem {
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 25px;
+  }
 }
 
-.spacerFooter {
-  flex: 1 1 auto; /*add space between search icon and rest of nav bar items*/
-}
-
-.footerItem {
-  background-color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px 0px;
-  border: 2px solid black;
-  padding: 10px;
-  border-radius: 25px;
-}
-
-.footerItem:hover {
-  /* background-color: coral; */
+@media only screen and (max-width: 1024px) {
+  .footer {
+    display: none;
+  }
 }

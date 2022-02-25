@@ -4,14 +4,8 @@
   font-size: 2.5rem;
 }
 
-.masonry-with-columns {
-  column-count: 4;
-  column-gap: 3rem;
-  margin: 0 50px;
-}
-
 .masonry-with-columns .card {
-  margin: 0 1rem 1rem 0;
+  margin: 5px;
   display: inline-block;
   width: 100%;
   font-size: 2rem;
@@ -28,4 +22,25 @@ mat-card-actions {
 
 .ib-button {
   cursor: pointer;
+}
+
+/*Desktop Viewport*/
+@media only screen and (min-width: 769px) {
+  .masonry-with-columns .card {
+    width: 25%;
+  }
+}
+
+/* Tablet viewport*/
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+  .masonry-with-columns .card {
+    width: 40%;
+  }
+}
+
+/* Mobile viewport */
+@media only screen and (max-width: 480px) {
+  .masonry-with-columns .card {
+    width: 100%;
+  }
 }
