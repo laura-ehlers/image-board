@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {searchImages} from 'pixabay-api';
 
 @Injectable({
@@ -7,7 +6,8 @@ import {searchImages} from 'pixabay-api';
 })
 export class ApiService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor() {
+  }
 
   // api connection for request with empty searchstring (when entering the page for the first time)
   getRandomImages() {
@@ -16,6 +16,6 @@ export class ApiService {
 
   // api connection for request when searching for any searchterm
   getImagesByCategory(category: string) {
-    return searchImages('24820906-d5dae2f9641e319a6153a3841', category, {per_page:8, page:1});
+    return searchImages('24820906-d5dae2f9641e319a6153a3841', category, {per_page: 8, page: 1});
   }
 }

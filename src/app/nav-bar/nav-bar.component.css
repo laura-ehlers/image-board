@@ -149,3 +149,11 @@
     height: 100% !important;
   }
 }
+
+.pixabay-logo img {
+  max-width: 12%;
+  height: auto;
+  float: right;
+  margin-top: -50px;
+  margin-right: 20px;
+}
